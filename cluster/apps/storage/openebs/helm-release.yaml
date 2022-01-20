@@ -19,3 +19,5 @@ spec:
   values:
     ndm:
       enabled: false
+    ndmOperator:
+      enabled: false
