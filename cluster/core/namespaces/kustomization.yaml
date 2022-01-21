@@ -4,4 +4,4 @@ resources:
   - cert-manager.yaml
   - metallb-system.yaml
   - openebs.yaml
-  - traefik.yaml
+  - networking.yaml
