@@ -4,6 +4,5 @@ kind: Kustomization
 resources:
   - default
   - kube-system
-  - storage
   - traefik
   # - system-upgrade
