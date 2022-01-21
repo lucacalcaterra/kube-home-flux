@@ -1,4 +1,3 @@
----
 apiVersion: storage.k8s.io/v1
 kind: StorageClass
 metadata:
@@ -9,8 +8,8 @@ metadata:
     cas.openebs.io/config: |
       - name: StorageType
         value: hostpath
-      #- name: BasePath
-      #value: /mnt/dati/kubernetes/openebs
+      - name: BasePath
+        value: /mnt/dati/kubernetes/openebs
 provisioner: openebs.io/local
 reclaimPolicy: Delete
 volumeBindingMode: WaitForFirstConsumer
