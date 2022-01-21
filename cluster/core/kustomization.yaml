@@ -6,4 +6,4 @@ resources:
   - kube-system
   - metallb-system
   - openebs
-  #- system-upgrade
+  # - system-upgrade
