@@ -16,10 +16,9 @@ spec:
         name: k8s-at-home-charts
         namespace: flux-system
       interval: 5m
-  #values:
-  #  image:
-  #    repository: openhab/openhab
-  #    tag: 3.2.0
+  values:
+    image:
+      tag: 3.2.0
     # hajimari:
     #   defaultEnable: false
     #   namespaceSelector:

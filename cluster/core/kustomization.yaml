@@ -6,5 +6,4 @@ resources:
   - kube-system
   - metallb-system
   - openebs
-  - traefik
   # - system-upgrade
