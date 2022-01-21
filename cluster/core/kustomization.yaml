@@ -5,6 +5,5 @@ resources:
   - cert-manager
   - kube-system
   - metallb-system
-  - networking
   - openebs
   # - system-upgrade
