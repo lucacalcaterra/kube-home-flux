@@ -20,7 +20,12 @@ spec:
     image:
       tag: 3.2.0
     # openhab:
-
+    persistence:
+      data:
+        enabled: true
+        accessMode: ReadWriteOnce
+        size: 1Gi
+        persistentVolumeReclaimPolicy: Retain
     ingress:
       main:
         enabled: true
