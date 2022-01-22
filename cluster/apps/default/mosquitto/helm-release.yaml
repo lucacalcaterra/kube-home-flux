@@ -17,8 +17,8 @@ spec:
         namespace: flux-system
       interval: 5m
   values:
-    service:
-      annotations:
+    #service:
+    #  annotations:
         #metallb.universe.tf/address-pool: mosquitto
       #main:
         #type: LoadBalancer
