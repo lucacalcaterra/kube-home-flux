@@ -20,12 +20,12 @@ spec:
     service:
       dns-tcp:
         type: LoadBalancer
-        loadBalancerIP: 172.24.1.11
+        loadBalancerIP: ${CONFIG_LB_IP_ADGUARD_HOME}
         annotations:
           metallb.universe.tf/allow-shared-ip: adguard
       dns-udp:
         type: LoadBalancer
-        loadBalancerIP: 172.24.1.11
+        loadBalancerIP: ${CONFIG_LB_IP_ADGUARD_HOME}
         annotations:
           metallb.universe.tf/allow-shared-ip: adguard
     env:
