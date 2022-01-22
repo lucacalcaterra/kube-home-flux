@@ -1,0 +1,47 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: mosquitto
+  namespace: default
+spec:
+  interval: 5m
+  chart:
+    spec:
+      # renovate: registryUrl=https://hajimari.io
+      chart: mosquitto
+      version: 4.1.0
+      sourceRef:
+        kind: HelmRepository
+        name: k8s-at-home-charts
+        namespace: flux-system
+      interval: 5m
+  values:
+    service:
+      annotations:
+        #metallb.universe.tf/address-pool: mosquitto
+      #main:
+        #type: LoadBalancer
+    #spec:
+      # Request this permanent IP address for traefik with MetalLB.
+      # Kubernetes Master Node has this ip address mapped in /etc/avahi/hosts
+      #loadBalancerIP: 172.24.1.12
+    env:
+      TZ: "Europe/Rome"
+    persistence:
+      # -- Configure a persistent volume to place mosquitto data in.
+      # When enabled, this enables `persistence` and `persistence_location` in the mosquitto config.
+      # @default -- See values.yaml
+      data:
+        enabled: true
+        mountPath: /mosquitto/data
+        accessMode: ReadWriteOnce
+        size: 1Gi
+      # -- Configure a persistent volume to place *.conf mosquitto-config-files in.
+      # When enabled, this gets set as `include_dir` in the mosquitto config.
+      # @default -- See values.yaml
+      configinc:
+        enabled: true
+        mountPath: /mosquitto/configinc
+        accessMode: ReadWriteOnce
+        size: 100Mi
