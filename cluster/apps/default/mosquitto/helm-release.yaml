@@ -17,15 +17,15 @@ spec:
         namespace: flux-system
       interval: 5m
   values:
-    #service:
-    #  annotations:
-        #metallb.universe.tf/address-pool: mosquitto
-      #main:
-        #type: LoadBalancer
+    service:
+      annotations:
+        main:
+          type: LoadBalancer
+          loadBalancerIP: ${CONFIG_LB_IP_MOSQUITTO}
     #spec:
-      # Request this permanent IP address for traefik with MetalLB.
-      # Kubernetes Master Node has this ip address mapped in /etc/avahi/hosts
-      #loadBalancerIP: 172.24.1.12
+    # Request this permanent IP address for traefik with MetalLB.
+    # Kubernetes Master Node has this ip address mapped in /etc/avahi/hosts
+    #loadBalancerIP: 172.24.1.12
     env:
       TZ: "Europe/Rome"
     persistence:
