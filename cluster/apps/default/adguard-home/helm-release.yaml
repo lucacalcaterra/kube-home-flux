@@ -1,0 +1,43 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: adguard-home
+  namespace: default
+spec:
+  interval: 5m
+  chart:
+    spec:
+      # renovate: registryUrl=https://hajimari.io
+      chart: adguard-home
+      version: 5.2.0
+      sourceRef:
+        kind: HelmRepository
+        name: k8s-at-home-charts
+        namespace: flux-system
+      interval: 5m
+  values:
+    service:
+      dns-tcp:
+        type: LoadBalancer
+        loadBalancerIP: 172.24.1.11
+        annotations:
+          metallb.universe.tf/allow-shared-ip: adguard
+      dns-udp:
+        type: LoadBalancer
+        loadBalancerIP: 172.24.1.11
+        annotations:
+          metallb.universe.tf/allow-shared-ip: adguard
+    env:
+      TZ: "Europe/Rome"
+    persistence:
+      config:
+        enabled: true
+        mountPath: /opt/adguardhome/conf
+        accessMode: ReadWriteOnce
+        size: 200Mi
+      data:
+        enabled: true
+        mountPath: /opt/adguardhome/work
+        accessMode: ReadWriteOnce
+        size: 1Gi
