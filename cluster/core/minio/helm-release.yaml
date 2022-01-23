@@ -21,6 +21,6 @@ spec:
     #resources:
     #  requests:
     #    memory: 2Gi
-    persistence:
-      storageClass: "nfs-client"
+    #persistence:
+      #storageClass: "nfs-client"
       #size: 1Gi
