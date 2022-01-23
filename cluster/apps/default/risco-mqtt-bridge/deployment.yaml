@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert
+    kompose.version: 1.26.0 (40646f47)
+  labels:
+    io.kompose.service: risco-mqtt-bridge
+  name: risco-mqtt-bridge
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: risco-mqtt-bridge
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose convert
+        kompose.version: 1.26.0 (40646f47)
+      labels:
+        io.kompose.service: risco-mqtt-bridge
+    spec:
+      containers:
+        - env:
+            - name: NODE_ENV
+              value: production
+            - name: TZ
+              value: 'Europe/Rome'
+          image: lucacalcaterra/risco-mqtt-bridge
+          name: risco-mqtt-bridge
+          ports:
+            - containerPort: 8000
+          resources: {}
+          volumeMounts:
+            - mountPath: /app/config
+              name: risco-mqtt-bridge-config
+            #- mountPath: /app/logs
+            #  name: risco-mqtt-bridge
+      restartPolicy: Always
+      volumes:
+        - name: risco-mqtt-bridge-config
+          persistentVolumeClaim:
+            claimName: risco-mqtt-bridge-config
+status: {}

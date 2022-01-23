@@ -5,3 +5,4 @@ resources:
   - hajimari
   - mosquitto
   - openhab
+  - risco-mqtt-bridge
