@@ -3,5 +3,6 @@ kind: Kustomization
 resources:
   - cert-manager.yaml
   - metallb-system.yaml
+  - minio
   - openebs.yaml
   - networking.yaml
