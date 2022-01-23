@@ -18,3 +18,4 @@ spec:
       interval: 5m
   values:
     mode: standalone
+    storageClass: "nfs-client"
