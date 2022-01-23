@@ -18,6 +18,9 @@ spec:
       interval: 5m
   values:
     mode: standalone
+    resources:
+      requests:
+        memory: 2Gi
     persistence:
       storageClass: "nfs-client"
       size: 1Gi
