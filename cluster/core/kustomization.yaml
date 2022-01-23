@@ -3,6 +3,7 @@ kind: Kustomization
 resources:
   - namespaces
   - cert-manager
+  - intel-gpu-plugin
   - kube-system
   - metallb-system
   - openebs
