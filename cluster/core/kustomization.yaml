@@ -5,6 +5,7 @@ resources:
   - cert-manager
   - intel-gpu-plugin
   - kube-system
+  - k10
   - metallb-system
   - minio
   - nfs-client-provisioner
