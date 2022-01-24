@@ -17,6 +17,12 @@ spec:
         namespace: flux-system
       interval: 5m
   values:
+    externalGateway:
+      create: true
+    auth:
+      basicAuth:
+        enabled: true
+        htpasswd: "admin:$2y$10$CvE4BFvhs6G8fd.sm1/jRufaFwfg.S67m2aXRYqoKabWj3KE.q4QC"
     #mode: standalone
     #resources:
     #  requests:
