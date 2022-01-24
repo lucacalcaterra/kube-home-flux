@@ -34,7 +34,7 @@ spec:
       host: "k10.${SECRET_DOMAIN}"
       tls:
         enabled: true
-        secretname: "k10-tls"
+        secretName: "k10-tls"
 
       # main:
       #   enabled: true
