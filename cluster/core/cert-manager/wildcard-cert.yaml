@@ -8,7 +8,7 @@ spec:
   secretName: tls-secret
   issuerRef:
     kind: Issuer
-    name: letsencrypt-production
+    name: letsencrypt-staging
   commonName: "*.${SECRET_DOMAIN}"
   dnsNames:
     - "*.${SECRET_DOMAIN}"
