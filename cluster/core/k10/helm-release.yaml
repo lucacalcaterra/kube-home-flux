@@ -17,12 +17,16 @@ spec:
         namespace: flux-system
       interval: 5m
   values:
+    # for storage doesn't support snapshot
+    injectKanisterSidecar:
+      enabled: true
     externalGateway:
       create: true
     auth:
       basicAuth:
         enabled: true
         htpasswd: "admin:$2y$10$CvE4BFvhs6G8fd.sm1/jRufaFwfg.S67m2aXRYqoKabWj3KE.q4QC"
+    # need different parms
     ingress:
       create: true
       class: "traefik"
@@ -35,24 +39,6 @@ spec:
       tls:
         enabled: true
         secretName: "k10-tls"
-
-      # main:
-      #   enabled: true
-      #   ingressClassName: "traefik"
-      #   annotations:
-      #     cert-manager.io/cluster-issuer: "letsencrypt-production"
-      #     #hajimari.io/enable: "true"
-      #     #hajimari.io/icon: "weather-sunset"
-      #     traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
-      #   hosts:
-      #     - host: "k10.${SECRET_DOMAIN}"
-      #       paths:
-      #         - path: /
-      #           pathType: Prefix
-      #   tls:
-      #     - hosts:
-      #         - "k10.${SECRET_DOMAIN}"
-      #       secretName: "k10-tls"
     #mode: standalone
     #resources:
     #  requests:
