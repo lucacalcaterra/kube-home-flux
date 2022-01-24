@@ -1,0 +1,13 @@
+---
+apiVersion: cert-manager.io/v1alpha2
+kind: Certificate
+metadata:
+  name: wildcard-cert
+spec:
+  secretName: tls-secret
+  issuerRef:
+    kind: Issuer
+    name: letsencrypt-production
+  commonName: "*.${SECRET_DOMAIN}"
+  dnsNames:
+    - "*.${SECRET_DOMAIN}"
