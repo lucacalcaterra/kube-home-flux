@@ -24,6 +24,7 @@ spec:
         enabled: true
         htpasswd: "admin:$2y$10$CvE4BFvhs6G8fd.sm1/jRufaFwfg.S67m2aXRYqoKabWj3KE.q4QC"
     ingress:
+      create: true
       main:
         enabled: true
         ingressClassName: "traefik"
