@@ -19,5 +19,6 @@ spec:
   values:
     defaultSettings:
       defaultDataPath: /mnt/dati/kubernetes/longhorn
+      defaultReplicaCount: 1
     persistence:
       defaultClassReplicaCount: 1
