@@ -21,26 +21,25 @@ spec:
     injectKanisterSidecar:
       enabled: true
 
-    # externalGateway:
-    #   create: true
-    # auth:
-    #   basicAuth:
-    #     enabled: true
-    #     htpasswd: "admin:$2y$10$CvE4BFvhs6G8fd.sm1/jRufaFwfg.S67m2aXRYqoKabWj3KE.q4QC"
-    # # need different parms
-    # ingress:
-    #   create: true
-    #   class: "traefik"
-    #   annotations:
-    #     cert-manager.io/cluster-issuer: "letsencrypt-production"
-    #     #hajimari.io/enable: "true"
-    #     #hajimari.io/icon: "weather-sunset"
-    #     traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
-    #   host: "k10.${SECRET_DOMAIN}"
-    #   tls:
-    #     enabled: true
-    #     secretName: "k10-tls"
-
+    externalGateway:
+      create: true
+    auth:
+      basicAuth:
+        enabled: true
+        htpasswd: "admin:$2y$10$CvE4BFvhs6G8fd.sm1/jRufaFwfg.S67m2aXRYqoKabWj3KE.q4QC"
+    # need different parms
+    ingress:
+      create: true
+      class: "traefik"
+      annotations:
+        cert-manager.io/cluster-issuer: "letsencrypt-production"
+        #hajimari.io/enable: "true"
+        #hajimari.io/icon: "weather-sunset"
+        traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
+      host: "k10.${SECRET_DOMAIN}"
+      tls:
+        enabled: true
+        secretName: "k10-tls"
     #mode: standalone
     #resources:
     #  requests:
