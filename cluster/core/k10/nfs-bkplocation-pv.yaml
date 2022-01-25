@@ -14,5 +14,5 @@ spec:
       - hard
       - nfsvers=4.1
    nfs:
-      path: /${CONFIG_NFS_KUBEDATA_PATH}/k10backup
+      path: ${CONFIG_NFS_KUBEDATA_PATH}/k10backup
       server: ${CONFIG_NFS_SERVER_ADDRESS}
