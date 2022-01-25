@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+   name: nfs-bkplocation-pvc
+   namespace: kasten-io
+spec:
+   storageClassName: nfs-k10-bkp
+   accessModes:
+      - ReadWriteMany
+   resources:
+      requests:
+         storage: 10Gi
