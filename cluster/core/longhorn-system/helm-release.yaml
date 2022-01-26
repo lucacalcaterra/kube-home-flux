@@ -17,8 +17,16 @@ spec:
         namespace: flux-system
       interval: 5m
   values:
+    csi:
+      kubeletRootDir: /var/lib/k0s/kubelet
+
     defaultSettings:
       defaultDataPath: /mnt/dati/kubernetes/longhorn
-      defaultReplicaCount: 1
-    persistence:
-      defaultClassReplicaCount: 1
+      replicaSoftAntiAffinity: true
+      replicaZoneSoftAntiAffinity: true
+      createDefaultDiskLabeledNodes: true
+      defaultReplicaCount: 2
+      defaultLonghornStaticStorageClass: longhorn-static-storageclass
+      guaranteedEngineCPU: 0.10
+    #persistence:
+    #  defaultClassReplicaCount: 1

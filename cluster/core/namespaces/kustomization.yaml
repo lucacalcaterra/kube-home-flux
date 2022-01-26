@@ -3,7 +3,7 @@ kind: Kustomization
 resources:
   - cert-manager.yaml
   - kasten-io.yaml
-  #- longhorn-system.yaml
+  - longhorn-system.yaml
   - metallb-system.yaml
   - minio.yaml
   - openebs.yaml
