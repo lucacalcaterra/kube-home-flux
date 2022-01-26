@@ -28,6 +28,7 @@ spec:
       #hosts:
         #- host: "longhorn.${SECRET_DOMAIN}"
       host: "longhorn.${SECRET_DOMAIN}"
+      tls: true
         #paths:
         #  - path: /
         #    pathType: Prefix
