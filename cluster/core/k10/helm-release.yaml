@@ -17,6 +17,10 @@ spec:
         namespace: flux-system
       interval: 5m
   values:
+    eula:
+      accept: true
+      company: ${SECRET_K10_COMPANY}
+      email: ${SECRET_K10_EMAIL}
     # for storage doesn't support snapshot
     injectKanisterSidecar:
       enabled: true
