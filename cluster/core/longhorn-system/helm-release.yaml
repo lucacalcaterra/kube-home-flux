@@ -24,7 +24,7 @@ spec:
       defaultDataPath: /mnt/dati/kubernetes/longhorn
       replicaSoftAntiAffinity: true
       replicaZoneSoftAntiAffinity: true
-      createDefaultDiskLabeledNodes: true
+      createDefaultDiskLabeledNodes: false
       defaultReplicaCount: 2
       #defaultLonghornStaticStorageClass: longhorn-static-storageclass
       guaranteedEngineCPU: 0.10
