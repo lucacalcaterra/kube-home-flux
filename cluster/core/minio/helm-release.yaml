@@ -17,8 +17,8 @@ spec:
         namespace: flux-system
       interval: 5m
   values:
-    service:
-      type: LoadBalancer
+    #service:
+    #  type: LoadBalancer
     #mode: standalone
     #resources:
     #  requests:
