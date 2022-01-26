@@ -34,7 +34,7 @@ spec:
     logs:
       general:
         format: json
-        level: DEBUG
+        level: WARN
       access:
         enabled: true
         format: json
@@ -73,7 +73,7 @@ spec:
       default:
         minVersion: VersionTLS12
         maxVersion: VersionTLS13
-        sniStrict: true
+        sniStrict: false
     pilot:
       enabled: false
     experimental:
