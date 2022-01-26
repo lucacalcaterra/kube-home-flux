@@ -6,7 +6,7 @@ resources:
   - intel-gpu-plugin
   - kube-system
   - k10
-  - longhorn
+  #- longhorn
   - metallb-system
   - minio
   - nfs-client-provisioner
