@@ -17,6 +17,25 @@ spec:
         namespace: flux-system
       interval: 5m
   values:
+    ingress:
+      main:
+        enabled: true
+        ingressClassName: "traefik"
+        annotations:
+          cert-manager.io/cluster-issuer: "letsencrypt-production"
+          hajimari.io/enable: "true"
+          hajimari.io/icon: "weather-sunset"
+          traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
+        hosts:
+          - host: "longhorn.${SECRET_DOMAIN}"
+            paths:
+              - path: /
+                pathType: Prefix
+        tls:
+          - hosts:
+              - "longhorn.${SECRET_DOMAIN}"
+            secretName: "longhorn-tls"
+
     csi:
       kubeletRootDir: /var/lib/k0s/kubelet
 
@@ -25,8 +44,8 @@ spec:
       replicaSoftAntiAffinity: true
       replicaZoneSoftAntiAffinity: true
       createDefaultDiskLabeledNodes: false
-      defaultReplicaCount: 2
+      defaultReplicaCount: 1
       #defaultLonghornStaticStorageClass: longhorn-static-storageclass
       guaranteedEngineCPU: 0.10
-    #persistence:
-    #  defaultClassReplicaCount: 1
+    persistence:
+      defaultClassReplicaCount: 1
