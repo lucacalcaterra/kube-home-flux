@@ -22,7 +22,7 @@ spec:
       enabled: true
       namespaceSelector:
         matchLabels:
-          key: "default"
+          name: default
     externalGateway:
       create: true
     auth:
