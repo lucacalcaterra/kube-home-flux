@@ -31,10 +31,10 @@ spec:
         #paths:
         #  - path: /
         #    pathType: Prefix
-      tls:
-        - hosts:
-            - "longhorn.${SECRET_DOMAIN}"
-          secretName: "longhorn-tls"
+      #tls:
+      #  - hosts:
+      #      - "longhorn.${SECRET_DOMAIN}"
+      #    secretName: "longhorn-tls"
 
     csi:
       kubeletRootDir: /var/lib/k0s/kubelet
