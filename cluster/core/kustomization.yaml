@@ -10,5 +10,5 @@ resources:
   - minio
   - nfs-client-provisioner
   - openebs
-  - k10
+  # - k10
   # - system-upgrade
