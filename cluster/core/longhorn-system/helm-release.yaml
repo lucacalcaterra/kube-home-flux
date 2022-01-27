@@ -37,11 +37,11 @@ spec:
       #      - "longhorn.${SECRET_DOMAIN}"
       #    secretName: "longhorn-tls"
 
-    csi:
-      kubeletRootDir: /var/lib/k0s/kubelet
+    #csi:
+    #  kubeletRootDir: /var/lib/k0s/kubelet
 
     defaultSettings:
-      defaultDataPath: /mnt/dati/kubernetes/longhorn
+      #defaultDataPath: /mnt/dati/kubernetes/longhorn
       replicaSoftAntiAffinity: true
       replicaZoneSoftAntiAffinity: true
       createDefaultDiskLabeledNodes: false
