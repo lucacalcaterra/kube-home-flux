@@ -24,9 +24,9 @@ spec:
     # for storage doesn't support snapshot
     injectKanisterSidecar:
       enabled: true
-      namespaceSelector:
-        matchLabels:
-          k10/injectKanisterSidecar: true
+      #namespaceSelector:
+        #matchLabels:
+          #k10/injectKanisterSidecar: true
     externalGateway:
       create: true
     auth:
