@@ -23,7 +23,7 @@ spec:
       email: ${SECRET_K10_EMAIL}
     # for storage doesn't support snapshot
     injectKanisterSidecar:
-      enabled: false
+      enabled: true
       namespaceSelector:
         matchLabels:
           name: default
