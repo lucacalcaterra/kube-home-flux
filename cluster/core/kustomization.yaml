@@ -4,11 +4,12 @@ resources:
   - namespaces
   - kube-system
   - metallb-system
-  - longhorn-system
+  - openebs
+  #- longhorn-system
   - cert-manager
+  - traefik
   - intel-gpu-plugin
   - minio
   - nfs-client-provisioner
-  - openebs
   # - k10
   # - system-upgrade
