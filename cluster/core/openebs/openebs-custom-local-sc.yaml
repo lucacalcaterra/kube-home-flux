@@ -5,11 +5,11 @@ metadata:
   annotations:
     storageclass.kubernetes.io/is-default-class: "true"
     openebs.io/cas-type: local
-    cas.openebs.io/config: |
-      - name: StorageType
-        value: hostpath
-      - name: BasePath
-        value: /mnt/dati/kubernetes/openebs
+    #cas.openebs.io/config: |
+    #  - name: StorageType
+    #    value: hostpath
+    #  - name: BasePath
+    #    value: /mnt/dati/kubernetes/openebs
 provisioner: openebs.io/local
-reclaimPolicy: Retain
+#reclaimPolicy: Retain
 volumeBindingMode: WaitForFirstConsumer
