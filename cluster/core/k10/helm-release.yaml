@@ -26,7 +26,7 @@ spec:
       enabled: true
       namespaceSelector:
         matchLabels:
-          name: default
+          k10/injectKanisterSidecar: true
     externalGateway:
       create: true
     auth:
