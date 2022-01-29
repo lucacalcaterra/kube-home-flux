@@ -30,9 +30,11 @@ spec:
     externalGateway:
       create: true
     auth:
-      basicAuth:
+      #basicAuth:
+      #  enabled: true
+      #  htpasswd: "admin:$2y$10$CvE4BFvhs6G8fd.sm1/jRufaFwfg.S67m2aXRYqoKabWj3KE.q4QC"
+      tokenAuth:
         enabled: true
-        htpasswd: "admin:$2y$10$CvE4BFvhs6G8fd.sm1/jRufaFwfg.S67m2aXRYqoKabWj3KE.q4QC"
     # need different parms
     ingress:
       create: true
