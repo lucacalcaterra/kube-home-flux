@@ -12,4 +12,5 @@ resources:
   - minio
   - nfs-client-provisioner
   - k10
+  - velero
   # - system-upgrade

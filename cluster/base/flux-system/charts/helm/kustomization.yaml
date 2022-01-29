@@ -25,4 +25,5 @@ resources:
   - rook-ceph-charts.yaml
   - stakater-charts.yaml
   - traefik-charts.yaml
+  - velero-charts.yaml
   - weaveworks-kured-charts.yaml

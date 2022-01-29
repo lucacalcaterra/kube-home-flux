@@ -8,3 +8,4 @@ resources:
   - minio.yaml
   - openebs.yaml
   - traefik.yaml
+  - velero.yaml

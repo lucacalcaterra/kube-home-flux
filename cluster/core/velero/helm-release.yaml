@@ -1,0 +1,124 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: velero
+  namespace: velero
+spec:
+  interval: 5m
+  chart:
+    spec:
+      # renovate: registryUrl=https://openebs.github.io/charts
+      chart: longhorn
+      version: 1.2.3
+      sourceRef:
+        kind: HelmRepository
+        name: longhorn-charts
+        namespace: flux-system
+      interval: 5m
+  values:
+
+    # values.yaml
+
+    # helm-charts/values.yaml at main · vmware-tanzu/helm-charts
+    # https://github.com/vmware-tanzu/helm-charts/blob/main/charts/velero/values.yaml
+
+    # Init containers to add to the Velero deployment's pod spec. At least one plugin provider image is required.
+    # If the value is a string then it is evaluated as a template.
+    initContainers:
+      # - name: velero-plugin-for-csi
+      #   image: velero/velero-plugin-for-csi:v0.2.0
+      #   imagePullPolicy: IfNotPresent
+      #   volumeMounts:
+      #     - mountPath: /target
+      #       name: plugins
+      - name: velero-plugin-for-aws
+        image: velero/velero-plugin-for-aws:v1.3.0
+        imagePullPolicy: IfNotPresent
+        volumeMounts:
+          - mountPath: /target
+            name: plugins
+
+
+    # This job is meant primarily for cleaning up CRDs on CI systems.
+    # Using this on production systems, especially those that have multiple releases of Velero, will be destructive.
+    cleanUpCRDs: false
+
+    ##
+    ## Parameters for the `default` BackupStorageLocation and VolumeSnapshotLocation,
+    ## and additional server settings.
+    ##
+    configuration:
+      # Cloud provider being used (e.g. aws, azure, gcp).
+      provider: aws
+
+      # Parameters for the `default` BackupStorageLocation. See
+      # https://velero.io/docs/v1.6/api-types/backupstoragelocation/
+      backupStorageLocation:
+
+        # bucket is the name of the bucket to store backups in. Required.
+        bucket: kubebackup
+
+        # prefix is the directory under which all Velero data should be stored within the bucket. Optional.
+        #prefix: default
+
+        # Additional provider-specific configuration. See link above
+        # for details of required/optional fields for your provider.
+        config:
+          s3ForcePathStyle: true
+          region: default
+          s3Url: "http://minio.minio.svc.cluster.local:9000"
+
+      # Parameters for the `default` VolumeSnapshotLocation. See
+      # https://velero.io/docs/v1.6/api-types/volumesnapshotlocation/
+      #volumeSnapshotLocation:
+        # name is the name of the volume snapshot location where snapshots are being taken. Required.
+      #  name: snapshots
+        # provider is the name for the volume snapshot provider. If omitted
+        # `configuration.provider` will be used instead.
+      #  provider: aws
+        # Additional provider-specific configuration. See link above
+        # for details of required/optional fields for your provider.
+      #  config:
+      #    region: default
+
+      # Set true for backup all pod volumes without having to apply annotation on the pod when used restic Default: false. Other option: false.
+      defaultVolumesToRestic: true
+
+    # Info about the secret to be used by the Velero deployment, which
+    # should contain credentials for the cloud provider IAM account you've
+    # set up for Velero.
+    credentials:
+      # Whether a secret should be used as the source of IAM account
+      # credentials. Set to false if, for example, using kube2iam or
+      # kiam to provide IAM credentials for the Velero pod.
+      useSecret: true
+      # Name of the secret to create if `useSecret` is true and `existingSecret` is empty
+      name:
+      # Name of a pre-existing secret (if any) in the Velero namespace
+      # that should be used to get IAM account credentials. Optional.
+      existingSecret:
+      # Data to be stored in the Velero secret, if `useSecret` is true and `existingSecret` is empty.
+      # As of the current Velero release, Velero only uses one secret key/value at a time.
+      # The key must be named `cloud`, and the value corresponds to the entire content of your IAM credentials file.
+      # Note that the format will be different for different providers, please check their documentation.
+      # Here is a list of documentation for plugins maintained by the Velero team:
+      # [AWS] https://github.com/vmware-tanzu/velero-plugin-for-aws/blob/main/README.md
+      # [GCP] https://github.com/vmware-tanzu/velero-plugin-for-gcp/blob/main/README.md
+      # [Azure] https://github.com/vmware-tanzu/velero-plugin-for-microsoft-azure/blob/main/README.md
+      secretContents:
+      #  cloud: |
+      #    [default]
+      #    aws_access_key_id=<REDACTED>
+      #    aws_secret_access_key=<REDACTED>
+      # additional key/value pairs to be used as environment variables such as "DIGITALOCEAN_TOKEN: <your-key>". Values will be stored in the secret.
+        cloud: |
+          [default]
+          aws_access_key_id = admin
+          aws_secret_access_key = ${SECRET_MINIO_ADMIN_KEY}
+
+    # Whether to deploy the restic daemonset.
+    deployRestic: true
+
+    restic:
+      privileged: true
