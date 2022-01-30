@@ -8,7 +8,7 @@ spec:
   interval: 5m
   chart:
     spec:
-      # renovate: registryUrl=https://openebs.github.io/charts
+      # renovate: registryUrl=https://charts.longhorn.io
       chart: longhorn
       version: 1.2.3
       sourceRef:
