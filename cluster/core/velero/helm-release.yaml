@@ -17,7 +17,7 @@ spec:
         namespace: flux-system
       interval: 5m
   values:
-
+    snapshotsEnabled: false
     # values.yaml
 
     # helm-charts/values.yaml at main · vmware-tanzu/helm-charts
