@@ -37,11 +37,11 @@ spec:
           - hosts:
               - "jellyfin.${SECRET_DOMAIN}"
             secretName: "jellyfin-tls"
-      persistence:
-        config:
-          enabled: true
-          accessMode: ReadWriteOnce
-          size: 1Gi
-        media:
-          enabled: true
-          existingClaim: nfs-media
+    persistence:
+      config:
+        enabled: true
+        accessMode: ReadWriteOnce
+        size: 1Gi
+      media:
+        enabled: true
+        existingClaim: nfs-media
