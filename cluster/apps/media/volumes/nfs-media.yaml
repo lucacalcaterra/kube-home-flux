@@ -1,0 +1,35 @@
+---
+kind: StorageClass
+apiVersion: storage.k8s.io/v1
+metadata:
+  name: nfs-media
+provisioner: nfs
+reclaimPolicy: Retain
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: nfs-media
+spec:
+  storageClassName: nfs-media
+  capacity:
+    storage: 1Mi
+  accessModes:
+    - ReadWriteMany
+  persistentVolumeReclaimPolicy: Retain
+  nfs:
+    server: "${CONFIG_NFS_SERVER_ADDRESS}"
+    path: "/media"
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: nfs-media
+  namespace: media
+spec:
+  accessModes:
+    - ReadWriteMany
+  storageClassName: nfs-video-media
+  resources:
+    requests:
+      storage: 1Mi
