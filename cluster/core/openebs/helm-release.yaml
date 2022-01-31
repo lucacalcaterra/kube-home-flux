@@ -17,12 +17,12 @@ spec:
         namespace: flux-system
       interval: 5m
   values:
-    #ndm:
-    #  enabled: false
-    #ndmOperator:
-    #  enabled: false
-    cstor:
-      enabled: true
-      # for k0s
-      csiNode:
-        kubeletDir: "/var/lib/k0s/kubelet"
+    ndm:
+      enabled: false
+    ndmOperator:
+      enabled: false
+    #cstor:
+    #  enabled: true
+    #  # for k0s
+    #  csiNode:
+    #    kubeletDir: "/var/lib/k0s/kubelet"
