@@ -42,6 +42,6 @@ spec:
         enabled: true
         accessMode: ReadWriteOnce
         size: 1Gi
-      media:
-        enabled: true
-        existingClaim: nfs-media
+      #media:
+      #  enabled: true
+      #  existingClaim: nfs-media
