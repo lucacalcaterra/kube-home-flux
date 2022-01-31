@@ -29,7 +29,7 @@ metadata:
 spec:
   accessModes:
     - ReadWriteMany
-  storageClassName: nfs-video-media
+  storageClassName: nfs-media
   resources:
     requests:
       storage: 1Mi
