@@ -11,6 +11,6 @@ resources:
   - intel-gpu-plugin
   - minio
   - nfs-client-provisioner
-  #- k10
+  - k10
   - velero
   # - system-upgrade
