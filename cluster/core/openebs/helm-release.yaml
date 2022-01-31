@@ -21,8 +21,8 @@ spec:
       enabled: false
     ndmOperator:
       enabled: false
-    #cstor:
-    #  enabled: true
-    #  # for k0s
-    #  csiNode:
-    #    kubeletDir: "/var/lib/k0s/kubelet"
+    cstor:
+      enabled: false
+      # for k0s
+      csiNode:
+        kubeletDir: "/var/lib/k0s/kubelet"
