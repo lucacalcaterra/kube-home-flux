@@ -17,8 +17,8 @@ spec:
         namespace: flux-system
       interval: 5m
   values:
-    #env:
-    #  TZ: "Europe/Rome"
+    env:
+      TZ: "Europe/Rome"
     ingress:
       main:
         enabled: true
@@ -37,3 +37,9 @@ spec:
           - hosts:
               - "jellyfin.${SECRET_DOMAIN}"
             secretName: "jellyfin-tls"
+      persistence:
+        config:
+          enabled: true
+        media:
+          enabled: true
+          existingClaim: nfs-media
