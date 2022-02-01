@@ -105,7 +105,7 @@ spec:
           hajimari.io/enable: "true"
           hajimari.io/icon: "weather-sunset"
           traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
-          traefik.ingress.kubernetes.io/router.middlewares: forward-middleware@kubernetescrd
+          traefik.ingress.kubernetes.io/router.middlewares: forward-middleware
         hosts:
           - host: "hajimari.${SECRET_DOMAIN}"
             paths:
