@@ -30,6 +30,6 @@ spec:
       whitelist: ${BOOTSTRAP_CLOUDFLARE_EMAIL}
     middleware:
       enabled: true
-      name: "traefik-forward-middleware"
+      name: "forward-middleware"
     logging:
       level: "DEBUG"
