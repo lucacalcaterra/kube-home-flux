@@ -44,15 +44,38 @@ spec:
           - hosts:
               - "openhab.${SECRET_DOMAIN}"
             secretName: "openhab-tls"
-    # persistence:
-    #   data:
-    #     enabled: true
-    #     existingClaim: hajimari-config
-    # podAnnotations:
-    #   configmap.reloader.stakater.com/reload: "hajimari-settings"
-    # resources:
-    #   requests:
-    #     cpu: 100m
-    #     memory: 128Mi
-    #   limits:
-    #     memory: 256Mi
+    # addons vs code
+    addons:
+      codeserver:
+        enabled: true
+        image:
+          repository: codercom/code-server
+          tag: 3.9.0
+        workingDir: "/config"
+        args:
+          - --auth
+          - "none"
+          - --user-data-dir
+          - "/config/.vscode"
+          - --extensions-dir
+          - "/config/.vscode"
+        ingress:
+          enabled: true
+          ingressClassName: "traefik"
+          annotations:
+            cert-manager.io/cluster-issuer: "letsencrypt-production"
+            hajimari.io/enable: "true"
+            hajimari.io/icon: "weather-sunset"
+            traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
+          hosts:
+            - host: "openhab-code.${SECRET_DOMAIN}"
+              paths:
+                - path: /
+                  pathType: Prefix
+          tls:
+            - hosts:
+                - "openhab-code.${SECRET_DOMAIN}"
+              secretName: "openhab-code-tls"
+        volumeMounts:
+          - name: config
+            mountPath: /config
