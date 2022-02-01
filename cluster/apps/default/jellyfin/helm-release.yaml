@@ -18,7 +18,7 @@ spec:
       interval: 5m
   values:
     env:
-      TZ: "Europe/Rome"
+      TZ: ${BOOTSTRAP_TIMEZONE}
     ingress:
       main:
         enabled: true
