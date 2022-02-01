@@ -26,6 +26,8 @@ spec:
         accessMode: ReadWriteOnce
         size: 1Gi
         persistentVolumeReclaimPolicy: Retain
+    env:
+      TZ: ${BOOTSTRAP_TIMEZONE}
     ingress:
       main:
         enabled: true
