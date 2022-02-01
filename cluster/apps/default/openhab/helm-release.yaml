@@ -28,6 +28,7 @@ spec:
         persistentVolumeReclaimPolicy: Retain
     env:
       TZ: ${CONFIG_TIMEZONE}
+      EXTRA_JAVA_OPTS: -Duser.timezone=${CONFIG_TIMEZONE}
     ingress:
       main:
         enabled: true
