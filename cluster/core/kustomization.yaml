@@ -9,8 +9,5 @@ resources:
   - cert-manager
   - traefik
   - intel-gpu-plugin
-  - minio
   - nfs-client-provisioner
-  - k10
-  - velero
   # - system-upgrade

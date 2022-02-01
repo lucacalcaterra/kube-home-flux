@@ -7,5 +7,5 @@ resources:
   - metallb-system.yaml
   - minio.yaml
   - openebs.yaml
-  - traefik.yaml
+  - networking.yaml
   - velero.yaml

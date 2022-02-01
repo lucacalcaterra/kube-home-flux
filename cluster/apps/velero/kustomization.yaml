@@ -2,9 +2,4 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-  - default
-  - kasten-io
-  - kube-system
-  - networking
   - velero
-  # - system-upgrade
