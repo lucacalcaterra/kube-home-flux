@@ -37,6 +37,11 @@ spec:
         - hosts:
             - "minio.${SECRET_DOMAIN}"
           secretName: "minio-tls"
+    persistence:
+      enabled: true
+      existingClaim: "nfs-minio"
+      storageClass: "nfs-minio"
+      # size:
     # resources
     resources:
       requests:
