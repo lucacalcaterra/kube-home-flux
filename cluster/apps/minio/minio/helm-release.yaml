@@ -40,4 +40,4 @@ spec:
     # resources
     resources:
       requests:
-        memory: {}
+        memory:
