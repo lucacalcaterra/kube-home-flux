@@ -13,7 +13,7 @@ metadata:
 spec:
   storageClassName: nfs-minio
   capacity:
-    storage: 1Mi
+    storage: 10Gi
   accessModes:
     - ReadWriteMany
   persistentVolumeReclaimPolicy: Retain
