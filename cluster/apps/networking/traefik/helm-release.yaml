@@ -36,7 +36,7 @@ spec:
         format: json
         level: WARN
       access:
-        enabled: true
+        enabled: false
         format: json
     ingressClass:
       enabled: true
