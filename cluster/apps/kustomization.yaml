@@ -5,6 +5,7 @@ resources:
   - default
   - kasten-io
   - kube-system
+  - minio
   - networking
   - velero
   # - system-upgrade
