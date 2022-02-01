@@ -7,7 +7,6 @@ resources:
   - openebs
   #- longhorn-system
   - cert-manager
-  - traefik
   - intel-gpu-plugin
   - nfs-client-provisioner
   # - system-upgrade
