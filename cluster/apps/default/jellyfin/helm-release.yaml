@@ -18,7 +18,7 @@ spec:
       interval: 5m
   values:
     env:
-      TZ: ${BOOTSTRAP_TIMEZONE}
+      TZ: ${CONFIG_TIMEZONE}
     ingress:
       main:
         enabled: true

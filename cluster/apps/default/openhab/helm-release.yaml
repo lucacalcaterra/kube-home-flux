@@ -27,7 +27,7 @@ spec:
         size: 1Gi
         persistentVolumeReclaimPolicy: Retain
     env:
-      TZ: ${BOOTSTRAP_TIMEZONE}
+      TZ: ${CONFIG_TIMEZONE}
     ingress:
       main:
         enabled: true

@@ -29,7 +29,7 @@ spec:
         annotations:
           metallb.universe.tf/allow-shared-ip: adguard
     env:
-      TZ: ${BOOTSTRAP_TIMEZONE}
+      TZ: ${CONFIG_TIMEZONE}
     ingress:
       main:
         enabled: true
