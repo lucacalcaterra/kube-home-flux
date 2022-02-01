@@ -28,3 +28,5 @@ spec:
       insecure: "false"
     restrictions:
       whitelist: ${BOOTSTRAP_CLOUDFLARE_EMAIL}
+    logging:
+      level: "DEBUG"
