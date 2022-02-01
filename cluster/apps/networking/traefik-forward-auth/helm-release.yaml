@@ -30,7 +30,7 @@ spec:
       whitelist: ${BOOTSTRAP_CLOUDFLARE_EMAIL}
     middleware:
       enabled: true
-      name: "forward-middleware"
+      name: "oauth"
     logging:
       level: "DEBUG"
     # ingress
