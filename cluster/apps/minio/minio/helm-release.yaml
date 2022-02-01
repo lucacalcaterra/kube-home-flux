@@ -21,7 +21,7 @@ spec:
     rootUser: "admin"
     rootPassword: ${SECRET_MINIO_ADMIN_KEY}
     # ingress
-    ingress:
+    consoleIngress:
       enabled: true
       ingressClassName: "traefik"
       annotations:
