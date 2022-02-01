@@ -28,5 +28,8 @@ spec:
       insecure: "false"
     restrictions:
       whitelist: ${BOOTSTRAP_CLOUDFLARE_EMAIL}
+    middleware:
+      enabled: true
+      name: "traefik-forward-middleware"
     logging:
       level: "DEBUG"
