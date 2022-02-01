@@ -37,3 +37,7 @@ spec:
         - hosts:
             - "minio.${SECRET_DOMAIN}"
           secretName: "minio-tls"
+    # resources
+    resources:
+      requests:
+        memory: {}
