@@ -7,3 +7,4 @@ resources:
   - mosquitto
   - openhab
   - risco-mqtt-bridge
+  - volumes
