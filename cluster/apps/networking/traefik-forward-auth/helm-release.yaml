@@ -50,3 +50,17 @@ spec:
         - hosts:
             - "auth.${SECRET_DOMAIN}"
           secretName: "traefik-forward-auth-tls"
+  # persistence
+  persistence:
+    config:
+      enabled: true
+      type: custom
+      volumeSpec:
+        configMap:
+          name: configs
+      subPath:
+        - path: traefik-forward-auth.ini
+          mountPath: /config
+        #- path: myCertificate.pem
+        #  mountPath: /certs/myCertificate.pem
+        #  readOnly: true
