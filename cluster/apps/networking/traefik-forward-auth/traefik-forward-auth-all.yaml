@@ -1,0 +1,112 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: traefik-forward-auth
+  namespace: networking
+  labels:
+    app: traefik-forward-auth
+spec:
+  selector:
+    matchLabels:
+      app: traefik-forward-auth
+  template:
+    metadata:
+      labels:
+        name: traefik-forward-auth
+        app: traefik-forward-auth
+    spec:
+      containers:
+        - name: traefik-forward-auth
+          image: thomseddon/traefik-forward-auth
+
+          imagePullPolicy: Always
+          env:
+            - name: PROVIDERS_GOOGLE_CLIENT_ID
+              value: ${SECRET_GOOGLEOAUTH2_CLIENT_ID}
+
+            - name: PROVIDERS_GOOGLE_CLIENT_SECRET
+              value: ${SECRET_GOOGLEOAUTH2_CLIENT_SECRET}
+
+            - name: SECRET
+              value: ${SECRET_GOOGLEOAUTH2_SECRET}
+            - name: COOKIE_DOMAIN
+              value: ${SECRET_DOMAIN}
+            - name: AUTH_HOST
+              value: auth.${SECRET_DOMAIN}
+            - name: INSECURE_COOKIE
+              value: "false"
+            # # - name: URL_PATH
+            # #   value: /_oauth
+            - name: WHITELIST
+              value: ${SECRET_CLOUDFLARE_EMAIL}
+            - name: LOG_LEVEL
+              value: debug
+          ports:
+            - containerPort: 4181
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: traefik-forward-auth
+  namespace: networking
+spec:
+  selector:
+    app: traefik-forward-auth
+  ports:
+    - protocol: TCP
+      port: 4181
+      targetPort: 4181
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: Middleware
+metadata:
+  name: sso
+  namespace: networking
+spec:
+  forwardAuth:
+    address: http://traefik-forward-auth.default.svc.cluster.local:4181
+    authResponseHeaders:
+      - "X-Forwarded-User"
+    trustForwardHeader: true
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: traefik-forward-auth
+  annotations:
+    traefik.ingress.kubernetes.io/router.entrypoints: websecure
+spec:
+  ingressClassName: "traefik"
+  tls:
+    - hosts:
+        - auth.${SECRET_DOMAIN}
+      secretName: traefik-forward-auth-tls
+  rules:
+    - host: auth.${SECRET_DOMAIN}
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: traefik-forward-auth
+                port:
+                  name: http
+# apiVersion: traefik.containo.us/v1alpha1
+# kind: IngressRoute
+# metadata:
+#   name: traefik-forward-auth
+#   namespace: networking
+#   #annotations:
+#   #  kubernetes.io/ingress.class: traefik-external
+# spec:
+#   entryPoints:
+#     - websecure
+#   routes:
+#     - match: Host(`auth.${SECRET_DOMAIN}`)
+#       kind: Rule
+#       services:
+#         - name: traefik-forward-auth
+#           port: 4181
+#       middlewares:
+#         - name: networking-sso@kubernetescrd
