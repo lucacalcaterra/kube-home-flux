@@ -47,6 +47,10 @@ spec:
             - name: configs
               mountPath: /config
               subPath: traefik-forward-auth.ini
+      volumes:
+        - name: configs
+          configMap:
+            name: configs
 ---
 kind: Service
 apiVersion: v1
