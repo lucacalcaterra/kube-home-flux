@@ -43,6 +43,10 @@ spec:
               value: debug
           ports:
             - containerPort: 4181
+          volumeMounts:
+            - name: configs
+              mountPath: /config
+              subPath: traefik-forward-auth.ini
 ---
 kind: Service
 apiVersion: v1
