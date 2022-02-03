@@ -92,6 +92,7 @@ spec:
                 name: traefik-forward-auth
                 port:
                   number: 4181
+                  type: tcp
 # apiVersion: traefik.containo.us/v1alpha1
 # kind: IngressRoute
 # metadata:
