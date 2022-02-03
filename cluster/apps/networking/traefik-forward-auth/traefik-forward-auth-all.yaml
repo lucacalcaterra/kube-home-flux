@@ -60,7 +60,7 @@ spec:
 apiVersion: traefik.containo.us/v1alpha1
 kind: Middleware
 metadata:
-  name: sso
+  name: oauth
   namespace: networking
 spec:
   forwardAuth:
@@ -91,7 +91,7 @@ spec:
               service:
                 name: traefik-forward-auth
                 port:
-                  name: http
+                  number: 4181
 # apiVersion: traefik.containo.us/v1alpha1
 # kind: IngressRoute
 # metadata:
