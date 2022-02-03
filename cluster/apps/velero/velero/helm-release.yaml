@@ -121,4 +121,5 @@ spec:
     deployRestic: true
 
     restic:
+      podVolumePath: /var/lib/k0s/kubelet/pods
       privileged: true
