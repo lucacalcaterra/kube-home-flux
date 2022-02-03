@@ -4,7 +4,7 @@ metadata:
    name: nfs-bkplocation-pv
 spec:
    capacity:
-      storage: 10Gi
+      storage: 50Gi
    volumeMode: Filesystem
    accessModes:
       - ReadWriteMany
