@@ -19,6 +19,7 @@ spec:
       annotations:
         kompose.cmd: kompose convert
         kompose.version: 1.26.0 (40646f47)
+        backup.velero.io/backup-volumes: config
       labels:
         io.kompose.service: risco-mqtt-bridge
     spec:
