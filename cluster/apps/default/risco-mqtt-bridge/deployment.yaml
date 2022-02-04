@@ -35,12 +35,12 @@ spec:
           resources: {}
           volumeMounts:
             - mountPath: /app/config
-              name: risco-mqtt-bridge-config
+              name: config
             #- mountPath: /app/logs
             #  name: risco-mqtt-bridge
       restartPolicy: Always
       volumes:
-        - name: risco-mqtt-bridge-config
+        - name: config
           persistentVolumeClaim:
             claimName: risco-mqtt-bridge-config
 status: {}
