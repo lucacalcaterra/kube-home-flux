@@ -45,6 +45,7 @@ spec:
       limits:
         memory: 1500Mi
 
+    configuration:
       # Cloud provider being used (e.g. aws, azure, gcp).
       provider: aws
       # Parameters for the `default` BackupStorageLocation. See
