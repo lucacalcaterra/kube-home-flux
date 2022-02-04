@@ -41,7 +41,7 @@ spec:
       config:
         enabled: true
         accessMode: ReadWriteOnce
-        #size: 10Gi
+        size: 10Gi
       media:
         enabled: true
         existingClaim: nfs-media
