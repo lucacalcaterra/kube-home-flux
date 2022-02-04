@@ -52,7 +52,7 @@ spec:
       # https://velero.io/docs/v1.6/api-types/backupstoragelocation/
       backupStorageLocation:
         # bucket is the name of the bucket to store backups in. Required.
-        bucket: velero
+        bucket: kubebackup
 
         # prefix is the directory under which all Velero data should be stored within the bucket. Optional.
         #prefix: default
