@@ -4,7 +4,7 @@ kind: PersistentVolumeClaim
 metadata:
   labels:
     io.kompose.service: risco-mqtt-bridge
-  name: config
+  name: risco-mqtt-bridge-config
 spec:
   accessModes:
     - ReadWriteOnce
