@@ -60,3 +60,5 @@ spec:
         mountPath: /opt/adguardhome/work
         accessMode: ReadWriteOnce
         size: 1Gi
+    podAnnotations:
+      backup.velero.io/backup-volumes: data,config

@@ -44,3 +44,5 @@ spec:
         mountPath: /mosquitto/configinc
         accessMode: ReadWriteOnce
         size: 100Mi
+    podAnnotations:
+      backup.velero.io/backup-volumes: data,configinc

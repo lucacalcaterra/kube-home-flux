@@ -121,6 +121,7 @@ spec:
         existingClaim: hajimari-config
     podAnnotations:
       configmap.reloader.stakater.com/reload: "hajimari-settings"
+      backup.velero.io/backup-volumes: data
     resources:
       requests:
         cpu: 100m
