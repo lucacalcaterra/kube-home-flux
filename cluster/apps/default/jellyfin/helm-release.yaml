@@ -45,6 +45,14 @@ spec:
       media:
         enabled: true
         existingClaim: nfs-media
+      musica:
+        enabled: true
+        type: custom
+        volumeSpec:
+          nfs:
+            server: ${CONFIG_NFS_SERVER_ADDRESS}
+            path: ${CONFIG_NFS_KUBEDATA_PATH}/musica
+
     podAnnotations:
       backup.velero.io/backup-volumes: config
     resources:
