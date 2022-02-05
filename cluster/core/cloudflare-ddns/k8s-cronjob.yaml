@@ -3,6 +3,7 @@ apiVersion: batch/v1beta1
 kind: CronJob
 metadata:
   name: cloudflare-ddns
+  namespace: kube-system
 spec:
   schedule: "*/5 * * * *"
   jobTemplate:
