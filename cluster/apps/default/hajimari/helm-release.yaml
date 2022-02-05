@@ -25,7 +25,8 @@ spec:
       namespaceSelector:
         matchNames:
           - default
-          - traefik
+          - networking
+          - minio
       name: "you"
       customApps:
         - name: Some External Cluster Service
