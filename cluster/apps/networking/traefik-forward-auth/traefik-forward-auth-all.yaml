@@ -21,6 +21,8 @@ spec:
 
           imagePullPolicy: Always
           env:
+            - name: CONFIG
+              value: "/config"
             - name: PROVIDERS_GOOGLE_CLIENT_ID
               value: ${SECRET_GOOGLEOAUTH2_CLIENT_ID}
 
