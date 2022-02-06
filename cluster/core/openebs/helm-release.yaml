@@ -18,11 +18,11 @@ spec:
       interval: 5m
   values:
     ndm:
-      enabled: false
+      enabled: true
     ndmOperator:
-      enabled: false
+      enabled: true
     cstor:
-      enabled: false
+      enabled: true
       # for k0s
       csiNode:
         kubeletDir: "/var/lib/k0s/kubelet"
