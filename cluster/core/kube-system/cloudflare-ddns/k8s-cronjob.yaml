@@ -22,4 +22,6 @@ spec:
                   value: "${SECRET_DDNS_CF_AUTH_KEY}"
                 - name: NAME
                   value: "*.${SECRET_DOMAIN}"
+              imagePullPolicy: IfNotPresent
+
           restartPolicy: OnFailure

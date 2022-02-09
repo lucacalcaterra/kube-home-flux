@@ -19,7 +19,7 @@ spec:
         - name: traefik-forward-auth
           image: thomseddon/traefik-forward-auth
 
-          imagePullPolicy: Always
+          imagePullPolicy: IfNotPresent
           env:
             - name: CONFIG
               value: "/config"
