@@ -81,10 +81,17 @@ spec:
               paths:
                 - path: /
                   pathType: Prefix
+            - host: "openhab-code.lan.${SECRET_DOMAIN}"
+              paths:
+                - path: /
+                  pathType: Prefix
           tls:
             - hosts:
                 - "openhab-code.${SECRET_DOMAIN}"
               secretName: "openhab-code-tls"
+            - hosts:
+                - "openhab-code.lan.${SECRET_DOMAIN}"
+              #secretName: "openhab-code-tls"
         volumeMounts:
           - name: data
             mountPath: /config
