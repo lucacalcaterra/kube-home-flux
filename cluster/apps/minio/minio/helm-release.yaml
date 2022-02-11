@@ -19,7 +19,7 @@ spec:
   values:
     mode: standalone
     rootUser: "admin"
-    rootPassword: ${SECRET_MINIO_ADMIN_KEY}
+    rootPassword: ${SECRET_ADMIN_KEY}
     # ingress
     consoleIngress:
       enabled: true
