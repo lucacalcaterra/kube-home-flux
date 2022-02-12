@@ -6,7 +6,7 @@ metadata:
   namespace: default
 spec:
   basicAuth:
-    secret: ${SECRET_OPENHAB_BASICAUTH}
+    secret: ${users}
 # ---
 # apiVersion: v1
 # kind: Secret
