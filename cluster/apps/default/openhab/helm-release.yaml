@@ -42,7 +42,7 @@ spec:
           hajimari.io/enable: "true"
           hajimari.io/icon: "weather-sunset"
           traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
-          traefik.ingress.kubernetes.io/router.middlewares: networking-oauth@kubernetescrd
+          traefik.ingress.kubernetes.io/router.middlewares: networking-oauth@kubernetescrd,basic-auth@kubernetescrd
         hosts:
           - host: "openhab.${SECRET_DOMAIN}"
             paths:
@@ -81,14 +81,9 @@ spec:
               paths:
                 - path: /
                   pathType: Prefix
-            - host: "openhab-code.lan.${SECRET_DOMAIN}"
-              paths:
-                - path: /
-                  pathType: Prefix
           tls:
             - hosts:
                 - "openhab-code.${SECRET_DOMAIN}"
-                - "openhab-code.lan.${SECRET_DOMAIN}"
               secretName: "openhab-code-tls"
         volumeMounts:
           - name: data
