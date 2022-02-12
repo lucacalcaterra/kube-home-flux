@@ -6,4 +6,4 @@ metadata:
   namespace: default
 spec:
   basicAuth:
-    secret: ${BOOTSTRAP_OPENHAB_BASICAUTH}
+    secret: ${SECRET_OPENHAB_BASICAUTH}
