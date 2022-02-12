@@ -13,4 +13,4 @@ metadata:
   name: authsecret
   namespace: default
 data:
-  users: ${SECRET_OPENHAB_BASICAUTH}
+  users: "${SECRET_OPENHAB_BASICAUTH}"
