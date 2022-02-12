@@ -14,4 +14,5 @@ metadata:
   name: authsecret
   namespace: default
 data:
-  users: ${SECRET_OPENHAB_BASICAUTH}
+  users: |1
+    YWRtaW46JGFwcjEkVlI4aXkwWmQka3QyRU9rcEM5c3FXSlpnMk9rNGNHLgoK
