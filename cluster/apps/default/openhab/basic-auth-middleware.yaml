@@ -6,7 +6,7 @@ metadata:
   namespace: default
 spec:
   basicAuth:
-    secret: traefik-exposed-dashboard-basic-auth
+    secret: ${SECRET_OPENHAB_BASICAUTH}
 # ---
 # apiVersion: v1
 # kind: Secret
