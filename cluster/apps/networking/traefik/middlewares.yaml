@@ -5,5 +5,4 @@ metadata:
   name: basicauth
   namespace: default
 spec:
-  basicAuth:
-    secret: ${SECRET_OPENHAB_BASICAUTH}
+  basicAuth: ${SECRET_OPENHAB_BASICAUTH}
