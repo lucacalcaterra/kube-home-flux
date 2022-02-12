@@ -6,12 +6,12 @@ metadata:
   namespace: default
 spec:
   basicAuth:
-    secret: ${users}
-# ---
-# apiVersion: v1
-# kind: Secret
-# metadata:
-#   name: authsecret
-#   namespace: default
-# data:
-#   users: "admin:$apr1$k1s87tla$3/TdhOgxXpwIJq1o/S7O71"
+    secret: authsecret
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: authsecret
+  namespace: default
+data:
+  users: ${SECRET_OPENHAB_BASICAUTH}
