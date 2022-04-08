@@ -9,3 +9,4 @@ resources:
   - openebs.yaml
   - networking.yaml
   - velero.yaml
+  - vpn.yaml
