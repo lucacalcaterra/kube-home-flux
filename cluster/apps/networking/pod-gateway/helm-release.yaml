@@ -24,7 +24,8 @@ spec:
     routed_namespaces:
       - vpn
 
-    #settings:
+    settings:
+      VPN_BLOCK_OTHER_TRAFFIC: false
     #NOT_ROUTED_TO_GATEWAY_CIDRS: "10.244.0.0/16 10.96.0.0/12"
     #VPN_LOCAL_CIDRS: "10.0.0.0/8 172.24.1.0/24"
     #VXLAN_IP_NETWORK: "192.168.242.0/24"
