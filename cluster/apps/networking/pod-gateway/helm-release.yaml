@@ -30,24 +30,24 @@ spec:
     #VPN_LOCAL_CIDRS: "10.0.0.0/8 172.24.1.0/24"
     #VXLAN_IP_NETWORK: "192.168.242.0/24"
 
-    addons:
-      vpn:
-        enabled: true
-        # You might use `openvpn` or `wireguard`
-        type: openvpn
-        # VPN settings stored in secret `vpnConfig`. The secret mus have a key
-        # a key called `vpnConfigfile` with the openvpn/wireguard config files in them
-        configFileSecret: vpn-config
-        openvpn:
-          authSecret: vpn-auth
+    # addons:
+    #   vpn:
+    #     enabled: true
+    #     # You might use `openvpn` or `wireguard`
+    #     type: openvpn
+    #     # VPN settings stored in secret `vpnConfig`. The secret mus have a key
+    #     # a key called `vpnConfigfile` with the openvpn/wireguard config files in them
+    #     configFileSecret: vpn-config
+    #     openvpn:
+    #       authSecret: vpn-auth
 
-        scripts:
-          up: |-
-            #!/bin/bash
-            /etc/openvpn/up.sh
-            echo "connected" > /shared/vpnstatus
+    #     scripts:
+    #       up: |-
+    #         #!/bin/bash
+    #         /etc/openvpn/up.sh
+    #         echo "connected" > /shared/vpnstatus
 
-          down: |-
-            #!/bin/bash
-            /etc/openvpn/down.sh
-            echo "disconnected" > /shared/vpnstatus
+    #       down: |-
+    #         #!/bin/bash
+    #         /etc/openvpn/down.sh
+    #         echo "disconnected" > /shared/vpnstatus
