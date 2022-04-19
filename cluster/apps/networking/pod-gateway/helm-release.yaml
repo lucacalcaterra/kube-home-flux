@@ -34,3 +34,14 @@ spec:
         configFileSecret: vpn-config
         openvpn:
           authSecret: vpn-auth
+
+        scripts:
+          up: |-
+            #!/bin/bash
+            /etc/openvpn/up.sh
+            echo "connected" > /shared/vpnstatus
+
+          down: |-
+            #!/bin/bash
+            /etc/openvpn/down.sh
+            echo "disconnected" > /shared/vpnstatus
