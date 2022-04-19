@@ -32,4 +32,4 @@ spec:
         # VPN settings stored in secret `vpnConfig`. The secret mus have a key
         # a key called `vpnConfigfile` with the openvpn/wireguard config files in them
         configFileSecret: vpn-config
-        auth: vpn-auth
+        authSecret: vpn-auth
