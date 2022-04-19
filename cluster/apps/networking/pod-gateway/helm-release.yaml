@@ -24,6 +24,10 @@ spec:
     routed_namespaces:
       - vpn
 
+    settings:
+      NOT_ROUTED_TO_GATEWAY_CIDRS: "172.24.1.0/24"
+      VPN_LOCAL_CIDRS: "172.24.1.0/24"
+
     addons:
       vpn:
         enabled: true
