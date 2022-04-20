@@ -17,26 +17,27 @@ spec:
         namespace: flux-system
       interval: 5m
 
-    persistence:
-      data:
-        enabled: true
-        existingClaim: qbittorrent-config
-    ingress:
-      main:
-        enabled: true
-        ingressClassName: "traefik"
-        annotations:
-          cert-manager.io/cluster-issuer: "letsencrypt-production"
-          hajimari.io/enable: "true"
-          hajimari.io/icon: "weather-sunset"
-          traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
-          #traefik.ingress.kubernetes.io/router.middlewares: default-basicauth@kubernetescrd
-        hosts:
-          - host: "qbittorrent.${SECRET_DOMAIN}"
-            paths:
-              - path: /
-                pathType: Prefix
-        tls:
-          - hosts:
-              - "qbittorrent.${SECRET_DOMAIN}"
-            secretName: "qbittorrent-tls"
+    values:
+      persistence:
+        data:
+          enabled: true
+          existingClaim: qbittorrent-config
+      ingress:
+        main:
+          enabled: true
+          ingressClassName: "traefik"
+          annotations:
+            cert-manager.io/cluster-issuer: "letsencrypt-production"
+            hajimari.io/enable: "true"
+            hajimari.io/icon: "weather-sunset"
+            traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
+            #traefik.ingress.kubernetes.io/router.middlewares: default-basicauth@kubernetescrd
+          hosts:
+            - host: "qbittorrent.${SECRET_DOMAIN}"
+              paths:
+                - path: /
+                  pathType: Prefix
+          tls:
+            - hosts:
+                - "qbittorrent.${SECRET_DOMAIN}"
+              secretName: "qbittorrent-tls"
