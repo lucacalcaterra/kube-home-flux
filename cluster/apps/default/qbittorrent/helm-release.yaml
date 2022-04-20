@@ -42,4 +42,4 @@ spec:
               - "qbittorrent.${SECRET_DOMAIN}"
             secretName: "qbittorrent-tls"
     podAnnotations:
-      backup.velero.io/backup-volumes: data
+      backup.velero.io/backup-volumes: config
