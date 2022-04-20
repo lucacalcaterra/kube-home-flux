@@ -19,7 +19,7 @@ spec:
 
   values:
     persistence:
-      data:
+      config:
         enabled: true
         existingClaim: qbittorrent-config
     ingress:
