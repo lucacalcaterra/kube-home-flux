@@ -6,6 +6,5 @@ resources:
   - hajimari
   - mosquitto
   - openhab
-  - qbittorrent
   - risco-mqtt-bridge
   - volumes
