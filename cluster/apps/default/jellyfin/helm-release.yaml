@@ -52,7 +52,7 @@ spec:
           nfs:
             server: ${CONFIG_NFS_SERVER_ADDRESS}
             path: ${CONFIG_NFS_KUBEDATA_PATH}/musica
-      qbittorrentDownloads:
+      qbittorrent-downloads:
         enabled: true
         type: custom
         volumeSpec:
