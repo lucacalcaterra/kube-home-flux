@@ -19,7 +19,7 @@ spec:
   persistentVolumeReclaimPolicy: Retain
   nfs:
     server: "${CONFIG_NFS_SERVER_ADDRESS}"
-    path: "/media"
+    path: "/kube-data/media"
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
