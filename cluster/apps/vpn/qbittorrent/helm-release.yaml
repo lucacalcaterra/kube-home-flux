@@ -30,6 +30,13 @@ spec:
           nfs:
             server: ${CONFIG_NFS_SERVER_ADDRESS}
             path: ${CONFIG_NFS_KUBEDATA_PATH}/apps/qbittorrents/downloads
+      media:
+        enabled: true
+        type: custom
+        volumeSpec:
+          nfs:
+            server: ${CONFIG_NFS_SERVER_ADDRESS}
+            path: ${CONFIG_NFS_KUBEDATA_PATH}/media
     ingress:
       main:
         enabled: true
