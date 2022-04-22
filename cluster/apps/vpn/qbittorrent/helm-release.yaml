@@ -29,7 +29,7 @@ spec:
         volumeSpec:
           nfs:
             server: ${CONFIG_NFS_SERVER_ADDRESS}
-            path: ${CONFIG_NFS_KUBEDATA_PATH}/qbittorrents/downloads
+            path: ${CONFIG_NFS_KUBEDATA_PATH}/apps/qbittorrents/downloads
     ingress:
       main:
         enabled: true
