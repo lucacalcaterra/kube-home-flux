@@ -44,7 +44,14 @@ spec:
         size: 10Gi
       media:
         enabled: true
-        existingClaim: nfs-media
+        type: custom
+        volumeSpec:
+          nfs:
+            server: ${CONFIG_NFS_SERVER_ADDRESS}
+            path: ${CONFIG_NFS_KUBEDATA_PATH}/media
+      # media:
+      #   enabled: true
+      #   existingClaim: nfs-media
       # films:
       #   enabled: true
       #   type: custom
