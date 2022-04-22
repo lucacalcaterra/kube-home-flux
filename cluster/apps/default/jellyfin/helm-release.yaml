@@ -45,6 +45,13 @@ spec:
       media:
         enabled: true
         existingClaim: nfs-media
+      films:
+        enabled: true
+        type: custom
+        volumeSpec:
+          nfs:
+            server: ${CONFIG_NFS_SERVER_ADDRESS}
+            path: ${CONFIG_NFS_KUBEDATA_PATH}/media/films
       musica:
         enabled: true
         type: custom
@@ -52,13 +59,6 @@ spec:
           nfs:
             server: ${CONFIG_NFS_SERVER_ADDRESS}
             path: ${CONFIG_NFS_KUBEDATA_PATH}/media/musica
-      qbittorrent-downloads:
-        enabled: true
-        type: custom
-        volumeSpec:
-          nfs:
-            server: ${CONFIG_NFS_SERVER_ADDRESS}
-            path: ${CONFIG_NFS_KUBEDATA_PATH}/qbittorrents/downloads
 
     podAnnotations:
       backup.velero.io/backup-volumes: config
