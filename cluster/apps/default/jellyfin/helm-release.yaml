@@ -38,6 +38,14 @@ spec:
               - "jellyfin.${SECRET_DOMAIN}"
             secretName: "jellyfin-tls"
     persistence:
+      transcode:
+        enabled: true
+        type: emptyDir
+        accessMode: ReadWriteOnce
+        emptyDir:
+          enabled: true
+          #medium: "Memory"
+          sizeLimit: 10Gi
       config:
         enabled: true
         accessMode: ReadWriteOnce
