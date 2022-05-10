@@ -9,7 +9,7 @@ spec:
   chart:
     spec:
       # renovate: registryUrl=https://k8s-at-home.com/charts/
-      chart: syncthing-sync
+      chart: syncthing
       version: 3.4.2
       sourceRef:
         kind: HelmRepository
