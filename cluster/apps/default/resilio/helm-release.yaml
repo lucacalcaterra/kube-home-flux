@@ -20,12 +20,12 @@ spec:
     env:
       TZ: ${CONFIG_TIMEZONE}
     service: 
-     bt-tcp:
-       enabled: true
-       type: LoadBalancer
-     bt-udp:
-       enabled: true 
-       type: LoadBalancer
+      bt-tcp:
+        enabled: true
+        type: LoadBalancer
+      bt-udp:
+        enabled: true 
+        type: LoadBalancer
     ingress:
       main:
         enabled: true
