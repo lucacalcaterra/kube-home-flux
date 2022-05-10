@@ -6,5 +6,6 @@ resources:
   - hajimari
   - mosquitto
   - openhab
+  - resilio
   - risco-mqtt-bridge
   - volumes
