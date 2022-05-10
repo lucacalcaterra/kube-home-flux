@@ -1,0 +1,48 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: syncthing
+  namespace: default
+spec:
+  interval: 5m
+  chart:
+    spec:
+      # renovate: registryUrl=https://k8s-at-home.com/charts/
+      chart: syncthing-sync
+      version: 3.4.2
+      sourceRef:
+        kind: HelmRepository
+        name: k8s-at-home-charts
+        namespace: flux-system
+      interval: 5m
+  values:
+    env:
+      TZ: ${CONFIG_TIMEZONE}
+    ingress:
+      main:
+        enabled: true
+        ingressClassName: "traefik"
+        annotations:
+          cert-manager.io/cluster-issuer: "letsencrypt-production"
+          hajimari.io/enable: "true"
+          hajimari.io/icon: "file-video"
+          traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
+        hosts:
+          - host: "syncthing.${SECRET_DOMAIN}"
+            paths:
+              - path: /
+                pathType: Prefix
+        tls:
+          - hosts:
+              - "syncthing.${SECRET_DOMAIN}"
+            secretName: "syncthing-tls"
+    persistence:
+      data:
+        enabled: true
+        mountPath: /var/syncthing
+        type: custom
+        volumeSpec:
+          nfs:
+            server: ${CONFIG_NFS_SERVER_ADDRESS}
+            path: ${CONFIG_NFS_KUBEDATA_PATH}/syncthing

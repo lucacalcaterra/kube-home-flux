@@ -8,4 +8,5 @@ resources:
   - openhab
   - resilio
   - risco-mqtt-bridge
+  - syncthing
   - volumes
