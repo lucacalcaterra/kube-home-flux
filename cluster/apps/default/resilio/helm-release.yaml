@@ -38,8 +38,14 @@ spec:
               - "resilio.${SECRET_DOMAIN}"
             secretName: "resilio-tls"
     persistence:
-      dati:
+      config:
         enabled: true
+        accessMode: ReadWriteOnce
+        size: 5Gi
+        mountPath: /config
+      sync:
+        enabled: true
+        mountPath: /sync
         type: custom
         volumeSpec:
           nfs:
