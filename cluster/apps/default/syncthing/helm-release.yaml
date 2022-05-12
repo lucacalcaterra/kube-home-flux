@@ -57,12 +57,12 @@ spec:
         enabled: true
         type: LoadBalancer
         #externalTrafficPolicy: Local
-        ports:
-          listen:
-            enabled: true
-            port: 22000
-            protocol: TCP
-            targetPort: 22000
+        #ports:
+        #  listen:
+        #    enabled: true
+        #    port: 22000
+        #    protocol: TCP
+        #    targetPort: 22000
       discovery:
         enabled: true
         type: NodePort
