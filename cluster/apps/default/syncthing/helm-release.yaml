@@ -46,3 +46,30 @@ spec:
           nfs:
             server: ${CONFIG_NFS_SERVER_ADDRESS}
             path: ${CONFIG_NFS_KUBEDATA_PATH}/syncthing
+
+
+    service:
+      main:
+        ports:
+          http:
+            port: 8384
+      listen:
+        enabled: true
+        type: LoadBalancer
+        #externalTrafficPolicy: Local
+        ports:
+          listen:
+            enabled: true
+            port: 22000
+            protocol: TCP
+            targetPort: 22000
+      discovery:
+        enabled: true
+        type: NodePort
+        externalTrafficPolicy: Local
+        ports:
+          discovery:
+            enabled: true
+            port: 21027
+            protocol: UDP
+            targetPort: 21027
