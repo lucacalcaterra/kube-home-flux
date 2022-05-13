@@ -19,12 +19,12 @@ spec:
   values:
     env:
       TZ: ${CONFIG_TIMEZONE}
-    service: 
+    service:
       bt-tcp:
         enabled: true
         type: LoadBalancer
       bt-udp:
-        enabled: true 
+        enabled: true
         type: LoadBalancer
     ingress:
       main:
@@ -58,29 +58,5 @@ spec:
           nfs:
             server: ${CONFIG_NFS_SERVER_ADDRESS}
             path: ${CONFIG_NFS_KUBEDATA_PATH}/resilio
-      # media:
-      #   enabled: true
-      #   existingClaim: nfs-media
-      # films:
-      #   enabled: true
-      #   type: custom
-      #   volumeSpec:
-      #     nfs:
-      #       server: ${CONFIG_NFS_SERVER_ADDRESS}
-      #       path: ${CONFIG_NFS_KUBEDATA_PATH}/media/films
-      # musica:
-      #   enabled: true
-      #   type: custom
-      #   volumeSpec:
-      #     nfs:
-      #       server: ${CONFIG_NFS_SERVER_ADDRESS}
-      #       path: ${CONFIG_NFS_KUBEDATA_PATH}/media/musica
-
-    # podAnnotations:
-    #   backup.velero.io/backup-volumes: config
-    # resources:
-    #   requests:
-    #     memory: 2Gi
-    #     cpu: 1
-    #   limits:
-    #     gpu.intel.com/i915: 1
+    podAnnotations:
+      backup.velero.io/backup-volumes: config
