@@ -49,6 +49,7 @@ spec:
       cache:
         enabled: true
         mountPath: /cache
+        accessMode: ReadWriteOnce
         size: 20Gi
       config:
         enabled: true
