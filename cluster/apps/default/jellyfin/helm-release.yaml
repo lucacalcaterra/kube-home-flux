@@ -46,6 +46,10 @@ spec:
           enabled: true
           #medium: "Memory"
           sizeLimit: 10Gi
+      cache:
+        enabled: true
+        mountPath: /cache
+        size: 20Gi
       config:
         enabled: true
         accessMode: ReadWriteOnce
