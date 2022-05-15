@@ -119,7 +119,7 @@ spec:
     upgradeCRDs: true
 
     restic:
-      podVolumePath: /var/lib/k0s/kubelet/pods
+      #podVolumePath: /var/lib/k0s/kubelet/pods
       privileged: false
       resources:
         requests:
