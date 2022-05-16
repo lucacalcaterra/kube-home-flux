@@ -5,7 +5,7 @@ resources:
   - kube-system
   - metallb-system
   - openebs
-  - longhorn-system
+  #- longhorn-system
   - cert-manager
   - nfs-client-provisioner
   # - system-upgrade
