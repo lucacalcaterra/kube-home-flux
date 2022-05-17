@@ -121,10 +121,10 @@ spec:
     restic:
       podVolumePath: /var/lib/k0s/kubelet/pods
       privileged: true
-      resources:
-        requests:
-          memory: 200Mi
-          cpu: 15m
-        limits:
-          memory: 3000Mi
-          cpu: null
+      # resources:
+      #   requests:
+      #     memory: 200Mi
+      #     cpu: 15m
+      #   limits:
+      #     memory: 3000Mi
+      #     cpu: null
