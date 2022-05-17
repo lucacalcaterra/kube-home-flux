@@ -4,8 +4,8 @@ resources:
   - namespaces
   - kube-system
   - metallb-system
-  - openebs
-  #- longhorn-system
+  #- openebs
+  - longhorn-system
   - cert-manager
   - nfs-client-provisioner
   # - system-upgrade
