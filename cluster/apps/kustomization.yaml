@@ -8,5 +8,5 @@ resources:
   - velero
   - vpn
   - default
-  - kasten-io
+  # - kasten-io
   # - system-upgrade
