@@ -37,6 +37,16 @@ spec:
           nfs:
             server: ${CONFIG_NFS_SERVER_ADDRESS}
             path: ${CONFIG_NFS_KUBEDATA_PATH}/media
+    service:            
+      bittorrent:
+        enabled: false
+        type: ClusterIP
+        ports:
+          bittorrent:
+            enabled: true
+            port: 6881
+            protocol: TCP
+            targetPort: 6881            
     ingress:
       main:
         enabled: true
