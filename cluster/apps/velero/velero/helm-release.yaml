@@ -62,7 +62,7 @@ spec:
         config:
           s3ForcePathStyle: true
           region: default
-          s3Url: http://minio.minio.svc.cluster.local:9000
+          s3Url: http://${CONFIG_LB_IP_MINIO}:9000
           insecureSkipTLSVerify: "true"
 
 
