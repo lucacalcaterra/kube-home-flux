@@ -39,7 +39,7 @@ spec:
             path: ${CONFIG_NFS_KUBEDATA_PATH}/media
     service:            
       bittorrent:
-        enabled: false
+        enabled: true
         type: ClusterIP
         ports:
           bittorrent:
