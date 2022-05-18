@@ -21,6 +21,9 @@ spec:
     rootUser: "admin"
     rootPassword: ${SECRET_MINIO_ADMIN_KEY}
     # ingress
+    service:
+      type: LoadBalancer
+      loadBalancerIP: ${CONFIG_LB_IP_MINIO}
     consoleIngress:
       enabled: true
       ingressClassName: "traefik"
