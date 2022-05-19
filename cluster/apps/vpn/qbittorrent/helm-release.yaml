@@ -50,7 +50,8 @@ spec:
             enabled: true
             port: 6881
             protocol: TCP
-            targetPort: 6881           
+            targetPort: 6881   
+        externalTrafficPolicy: Local
     ingress:
       main:
         enabled: true
