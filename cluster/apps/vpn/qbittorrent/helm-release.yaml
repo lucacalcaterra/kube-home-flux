@@ -62,13 +62,13 @@ spec:
           traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
           #traefik.ingress.kubernetes.io/router.middlewares: default-basicauth@kubernetescrd
         hosts:
-          - host: "qbittorrent.${SECRET_DOMAIN}"
+          - host: "qbt.${SECRET_DOMAIN}"
             paths:
               - path: /
                 pathType: Prefix
         tls:
           - hosts:
-              - "qbittorrent.${SECRET_DOMAIN}"
+              - "qbt.${SECRET_DOMAIN}"
             secretName: "qbittorrent-tls"
     podAnnotations:
       backup.velero.io/backup-volumes: config
