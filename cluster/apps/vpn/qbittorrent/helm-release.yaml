@@ -38,19 +38,20 @@ spec:
             server: ${CONFIG_NFS_SERVER_ADDRESS}
             path: ${CONFIG_NFS_KUBEDATA_PATH}/media
     service:
-      main:
-        ports:
-          http:
-            port: 8080
       bittorrent:
         enabled: true
-        type: ClusterIP
+        annotations:
+          prometheus.io/probe: "true"
+          prometheus.io/protocol: tcp
+        type: LoadBalancer
+        externalIPs:
+          - ${CONFIG_LB_IP_QBITTORRENT}
         ports:
           bittorrent:
-            enabled: true
-            port: 6881
+            port: 50413
+            name: bittorrent
             protocol: TCP
-            targetPort: 6881   
+            targetPort: 6881
         externalTrafficPolicy: Local
     ingress:
       main:
