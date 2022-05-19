@@ -37,22 +37,22 @@ spec:
           nfs:
             server: ${CONFIG_NFS_SERVER_ADDRESS}
             path: ${CONFIG_NFS_KUBEDATA_PATH}/media
-    service:
-      bittorrent:
-        enabled: true
-        annotations:
-          prometheus.io/probe: "true"
-          prometheus.io/protocol: tcp
-        type: LoadBalancer
-        externalIPs:
-          - ${CONFIG_LB_IP_QBITTORRENT}
-        ports:
-          bittorrent:
-            port: 50413
-            name: bittorrent
-            protocol: TCP
-            targetPort: 6881
-        externalTrafficPolicy: Local
+    # service:
+    #   bittorrent:
+    #     enabled: true
+    #     annotations:
+    #       prometheus.io/probe: "true"
+    #       prometheus.io/protocol: tcp
+    #     type: LoadBalancer
+    #     externalIPs:
+    #       - ${CONFIG_LB_IP_QBITTORRENT}
+    #     ports:
+    #       bittorrent:
+    #         port: 50413
+    #         name: bittorrent
+    #         protocol: TCP
+    #         targetPort: 6881
+    #     externalTrafficPolicy: Local
     ingress:
       main:
         enabled: true
