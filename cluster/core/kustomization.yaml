@@ -6,6 +6,9 @@ resources:
   - metallb-system
   - openebs
   #- longhorn-system
-  - cert-manager
   - nfs-client-provisioner
+  - networking
+  - cert-manager
+  - minio
+  - velero
   # - system-upgrade
