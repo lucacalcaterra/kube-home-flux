@@ -120,7 +120,7 @@ spec:
 
     restic:
       podVolumePath: /var/lib/k0s/kubelet/pods
-      privileged: false
+      privileged: true
       # resources:
       #   requests:
       #     memory: 200Mi
