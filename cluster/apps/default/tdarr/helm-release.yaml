@@ -20,7 +20,7 @@ spec:
     env:
       TZ: ${CONFIG_TIMEZONE}
       #webUIPort: 8265
-      #serverIP: 172.24.1.16
+      serverIP: 0.0.0.0
       #serverPort: 8266
       internalNode: true 
     ingress:
