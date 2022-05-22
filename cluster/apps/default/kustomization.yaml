@@ -9,5 +9,5 @@ resources:
   - resilio
   - risco-mqtt-bridge
   - syncthing
-  #- tdarr
+  - tdarr
   - volumes
