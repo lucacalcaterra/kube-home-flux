@@ -19,20 +19,10 @@ spec:
   values:
     env:
       TZ: ${CONFIG_TIMEZONE}
-      webUIPort: 8265
-      serverIP: 172.24.1.16
-      serverPort: 8266
+      #webUIPort: 8265
+      #serverIP: 172.24.1.16
+      #serverPort: 8266
       internalNode: true 
-    service:
-      main:
-        ports:
-          http:
-            port: 8265
-          server:
-            enabled: true
-            protocol: TCP
-            port: 8266
-        type: LoadBalancer
     ingress:
       main:
         enabled: true
