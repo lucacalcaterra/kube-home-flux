@@ -59,9 +59,9 @@ spec:
             path: ${CONFIG_NFS_KUBEDATA_PATH}/media
     podAnnotations:
       backup.velero.io/backup-volumes: data
-    resources:
-      requests:
-        memory: 2Gi
-        cpu: 1
-      limits:
-        gpu.intel.com/i915: 1
+    # resources:
+    #   requests:
+    #     memory: 2Gi
+    #     cpu: 1
+    #   limits:
+    #     gpu.intel.com/i915: 1
