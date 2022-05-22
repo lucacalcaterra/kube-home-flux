@@ -22,6 +22,7 @@ spec:
       webUIPort: 8265
       serverIP: 172.24.1.16
       serverPort: 8266
+      internalNode: true 
     service:
       main:
         ports:
