@@ -19,19 +19,6 @@ spec:
   values:
     env:
       TZ: ${CONFIG_TIMEZONE}
-    service:
-      ports:
-        http:
-          port: 8265
-        server:
-          enabled: true
-          protocol: TCP
-          port: 8266
-      type: LoadBalancer
-      externalIPs:
-        - 172.24.1.18
-      externalTrafficPolicy: Local
-
     ingress:
       main:
         enabled: true
