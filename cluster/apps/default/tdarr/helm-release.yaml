@@ -38,14 +38,10 @@ spec:
               - "tdarr.${SECRET_DOMAIN}"
             secretName: "tdarr-tls"
     persistence:
-      shared:
+      config:
         enabled: true
-        type: emptyDir
         accessMode: ReadWriteOnce
-        emptyDir:
-          enabled: true
-          #medium: "Memory"
-          sizeLimit: 10Gi
+        size: 10Gi
       data:
         enabled: true
         accessMode: ReadWriteOnce
@@ -57,6 +53,14 @@ spec:
           nfs:
             server: ${CONFIG_NFS_SERVER_ADDRESS}
             path: ${CONFIG_NFS_KUBEDATA_PATH}/media
+      shared:
+        enabled: true
+        type: emptyDir
+        accessMode: ReadWriteOnce
+        emptyDir:
+          enabled: true
+          #medium: "Memory"
+          sizeLimit: 10Gi
     podAnnotations:
       backup.velero.io/backup-volumes: data
     # resources:
