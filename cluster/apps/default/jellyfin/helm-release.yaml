@@ -82,9 +82,9 @@ spec:
 
     podAnnotations:
       backup.velero.io/backup-volumes: config
-    resources:
-      requests:
-        memory: 2Gi
-        cpu: 1
-      limits:
-        gpu.intel.com/i915: 1
+    # resources:
+    #   requests:
+    #     memory: 2Gi
+    #     cpu: 1
+    #   limits:
+    #     gpu.intel.com/i915: 1
