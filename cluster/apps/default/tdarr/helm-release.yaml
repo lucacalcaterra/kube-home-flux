@@ -23,6 +23,7 @@ spec:
       serverIP: ${CONFIG_LB_IP_TDARR}
       serverPort: 8266
       internalNode: true
+      THREADS_WORKER_INIT_TIMEOUT: 200000
     service:
       main:
         ports:
