@@ -5,7 +5,7 @@ metadata:
   name: cluster-settings
   namespace: flux-system
 data:
-  METALLB_LB_RANGE: 172.24.1.10-172.24.1.20
+  METALLB_LB_RANGE: 172.24.1.9-172.24.1.20
   METALLB_TRAEFIK_ADDR: 172.24.1.10
   CONFIG_TIMEZONE: Europe/Rome
   CONFIG_LB_IP_ADGUARD_HOME: 172.24.1.11
