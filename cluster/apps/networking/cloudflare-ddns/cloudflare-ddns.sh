@@ -3,9 +3,11 @@
 set -o nounset
 set -o errexit
 
+main_domain="${CLOUDFLARE_DOMAIN}"; echo $link | cut -d"." -f2,3
+
 current_ipv4="$(curl -s https://ipv4.icanhazip.com/)"
 zone_id=$(curl -s -X GET \
-    "https://api.cloudflare.com/client/v4/zones?name=${CLOUDFLARE_DOMAIN}&status=active" \
+    "https://api.cloudflare.com/client/v4/zones?name=$main_domain&status=active" \
     -H "X-Auth-Email: ${CLOUDFLARE_EMAIL}" \
     -H "X-Auth-Key: ${CLOUDFLARE_APIKEY}" \
     -H "Content-Type: application/json" \
