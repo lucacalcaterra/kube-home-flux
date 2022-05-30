@@ -19,6 +19,7 @@ spec:
   values:
     env:
       TZ: ${CONFIG_TIMEZONE}
+      ffmpegPath: "/usr/local/bin/ffmpeg"
       #webUIPort: 8265
       #serverIP: ${CONFIG_LB_IP_TDARR}
       #serverPort: 8266
