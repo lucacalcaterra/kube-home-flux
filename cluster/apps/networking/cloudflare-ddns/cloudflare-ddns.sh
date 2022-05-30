@@ -3,7 +3,7 @@
 set -o nounset
 set -o errexit
 
-main_domain="${CLOUDFLARE_DOMAIN}"; echo $link | cut -d"." -f2,3
+main_domain="${CLOUDFLARE_DOMAIN}"; echo $main_domain | cut -d"." -f2,3
 
 current_ipv4="$(curl -s https://ipv4.icanhazip.com/)"
 zone_id=$(curl -s -X GET \
