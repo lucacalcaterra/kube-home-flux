@@ -8,7 +8,6 @@ spec:
   interval: 5m
   chart:
     spec:
-      # renovate: registryUrl=https://helm.traefik.io/traefik
       chart: traefik
       version: 10.20.0
       sourceRef:
@@ -19,6 +18,13 @@ spec:
   dependsOn:
     - name: cert-manager
       namespace: cert-manager
+  install:
+    createNamespace: true
+    remediation:
+      retries: 3
+  upgrade:
+    remediation:
+      retries: 3
   values:
     image:
       name: ghcr.io/k8s-at-home/traefik
@@ -34,9 +40,9 @@ spec:
     logs:
       general:
         format: json
-        level: WARN
+        level: DEBUG
       access:
-        enabled: false
+        enabled: true
         format: json
     ingressClass:
       enabled: true
@@ -56,7 +62,6 @@ spec:
       - "--providers.kubernetesingress.ingressendpoint.ip=${METALLB_TRAEFIK_ADDR}"
       - "--providers.kubernetesingress.allowexternalnameservices=true"
       - "--providers.kubernetescrd.allowexternalnameservices=true"
-      - "--providers.kubernetescrd.allowCrossNamespace=true"
     ports:
       traefik:
         expose: true
@@ -74,7 +79,7 @@ spec:
       default:
         minVersion: VersionTLS12
         maxVersion: VersionTLS13
-        sniStrict: false
+        sniStrict: true
     pilot:
       enabled: false
     experimental:
