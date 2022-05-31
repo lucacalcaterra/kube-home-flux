@@ -40,7 +40,7 @@ spec:
     logs:
       general:
         format: json
-        level: DEBUG
+        level: WARN
       access:
         enabled: true
         format: json
