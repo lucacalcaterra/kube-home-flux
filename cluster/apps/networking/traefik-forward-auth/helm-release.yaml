@@ -70,17 +70,10 @@ spec:
           hajimari.io/icon: "weather-sunset"
           traefik.ingress.kubernetes.io/router.entrypoints: "websecure"
         hosts:
-          - host: auth.${SECRET_DOMAIN}
-            http:
-              paths:
-                - path: /
-                  pathType: Prefix
-                  backend:
-                    service:
-                      name: traefik-forward-auth
-                      port:
-                        number: 4181
-
+          - host: "auth.${SECRET_DOMAIN}"
+            paths:
+              - path: /
+                pathType: Prefix
         tls:
           - hosts:
               - "auth.${SECRET_DOMAIN}"
