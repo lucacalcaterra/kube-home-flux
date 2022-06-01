@@ -18,7 +18,7 @@ spec:
       interval: 5m
   values:
     env:
-      SECRET: "randomsecret"
+      SECRET: ""
       # - name: CONFIG
       #   value: "/config"
       # - name: PROVIDERS_GOOGLE_CLIENT_ID
