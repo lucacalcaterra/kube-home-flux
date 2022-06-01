@@ -72,7 +72,8 @@ spec:
         hosts:
           - host: "auth.${SECRET_DOMAIN}"
             paths:
-              - /
+              - path: /
+                pathType: Prefix
         tls:
           - hosts:
               - "auth.${SECRET_DOMAIN}"
