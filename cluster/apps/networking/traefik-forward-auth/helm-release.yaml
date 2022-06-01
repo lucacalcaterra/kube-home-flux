@@ -77,7 +77,11 @@ spec:
           - hosts:
               - "auth.${SECRET_DOMAIN}"
             secretName: "traefik-forward-auth-tls"
-
+    service:
+      main:
+        ports:
+          http:
+            port: 4181
     # persistence:
     #   config:
     #     enabled: true
