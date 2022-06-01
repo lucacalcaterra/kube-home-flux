@@ -29,6 +29,12 @@ spec:
       WHITELIST: ${SECRET_CLOUDFLARE_EMAIL}
       LOG_LEVEL: debug
 
+    middleware:
+      # -- Enable a preconfigured middleware.
+      enabled: true
+      # -- Override the middleware name.
+      nameOverride: "oauth"
+
       # - name: CONFIG
       #   value: "/config"
       # - name: PROVIDERS_GOOGLE_CLIENT_ID
