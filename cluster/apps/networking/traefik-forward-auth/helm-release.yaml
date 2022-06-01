@@ -25,7 +25,7 @@ spec:
 
       - PROVIDERS_GOOGLE_CLIENT_SECRET: ${SECRET_GOOGLEOAUTH2_CLIENT_SECRET}
         #value: ${SECRET_GOOGLEOAUTH2_CLIENT_SECRET}
-      - SECRETE: "randomsecret"
+      - SECRET: "randomsecret"
       #- name: SECRET
       #  value: ${SECRET_GOOGLEOAUTH2_SECRET}
       - name: COOKIE_DOMAIN
