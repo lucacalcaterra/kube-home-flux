@@ -19,6 +19,15 @@ spec:
   values:
     env:
       SECRET: ""
+      PROVIDERS_GOOGLE_CLIENT_ID: ${SECRET_GOOGLEOAUTH2_CLIENT_ID}
+      PROVIDERS_GOOGLE_CLIENT_SECRET: ${SECRET_GOOGLEOAUTH2_CLIENT_SECRET}
+      COOKIE_DOMAIN: ${SECRET_DOMAIN}
+      AUTH_HOST: auth.${SECRET_DOMAIN}
+      INSECURE_COOKIE: "false"
+      URL_PATH: "/_oauth"
+      WHITELIST: ${SECRET_CLOUDFLARE_EMAIL}
+      LOG_LEVEL: warn
+
       # - name: CONFIG
       #   value: "/config"
       # - name: PROVIDERS_GOOGLE_CLIENT_ID
