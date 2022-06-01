@@ -63,6 +63,9 @@ spec:
       - "--providers.kubernetesingress.ingressendpoint.ip=${METALLB_TRAEFIK_ADDR}"
       - "--providers.kubernetesingress.allowexternalnameservices=true"
       - "--providers.kubernetescrd.allowexternalnameservices=true"
+      # to allow middleware of traefik from all ns
+      - "--providers.kubernetescrd.allowCrossNamespace=true"
+
     ports:
       traefik:
         expose: true
