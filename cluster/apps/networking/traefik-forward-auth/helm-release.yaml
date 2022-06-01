@@ -18,6 +18,7 @@ spec:
       interval: 5m
   values:
     env:
+      CONFIG: "/config"
       SECRET: ""
       PROVIDERS_GOOGLE_CLIENT_ID: ${SECRET_GOOGLEOAUTH2_CLIENT_ID}
       PROVIDERS_GOOGLE_CLIENT_SECRET: ${SECRET_GOOGLEOAUTH2_CLIENT_SECRET}
@@ -26,7 +27,7 @@ spec:
       INSECURE_COOKIE: "false"
       URL_PATH: "/_oauth"
       WHITELIST: ${SECRET_CLOUDFLARE_EMAIL}
-      LOG_LEVEL: warn
+      LOG_LEVEL: debug
 
       # - name: CONFIG
       #   value: "/config"
