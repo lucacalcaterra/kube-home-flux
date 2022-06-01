@@ -18,28 +18,29 @@ spec:
       interval: 5m
   values:
     env:
-      - name: CONFIG
-        value: "/config"
-      - name: PROVIDERS_GOOGLE_CLIENT_ID
-        value: ${SECRET_GOOGLEOAUTH2_CLIENT_ID}
+      SECRET: "randomsecret"
+      # - name: CONFIG
+      #   value: "/config"
+      # - name: PROVIDERS_GOOGLE_CLIENT_ID
+      #   value: ${SECRET_GOOGLEOAUTH2_CLIENT_ID}
 
-      - PROVIDERS_GOOGLE_CLIENT_SECRET: ${SECRET_GOOGLEOAUTH2_CLIENT_SECRET}
-        #value: ${SECRET_GOOGLEOAUTH2_CLIENT_SECRET}
-      - SECRET: "randomsecret"
-      #- name: SECRET
-      #  value: ${SECRET_GOOGLEOAUTH2_SECRET}
-      - name: COOKIE_DOMAIN
-        value: ${SECRET_DOMAIN}
-      - name: AUTH_HOST
-        value: auth.${SECRET_DOMAIN}
-      - name: INSECURE_COOKIE
-        value: "false"
-      # # - name: URL_PATH
-      # #   value: /_oauth
-      - name: WHITELIST
-        value: ${SECRET_CLOUDFLARE_EMAIL}
-      - name: LOG_LEVEL
-        value: warn
+      # - PROVIDERS_GOOGLE_CLIENT_SECRET: ${SECRET_GOOGLEOAUTH2_CLIENT_SECRET}
+      #   #value: ${SECRET_GOOGLEOAUTH2_CLIENT_SECRET}
+      # - SECRET: "randomsecret"
+      # #- name: SECRET
+      # #  value: ${SECRET_GOOGLEOAUTH2_SECRET}
+      # - name: COOKIE_DOMAIN
+      #   value: ${SECRET_DOMAIN}
+      # - name: AUTH_HOST
+      #   value: auth.${SECRET_DOMAIN}
+      # - name: INSECURE_COOKIE
+      #   value: "false"
+      # # # - name: URL_PATH
+      # # #   value: /_oauth
+      # - name: WHITELIST
+      #   value: ${SECRET_CLOUDFLARE_EMAIL}
+      # - name: LOG_LEVEL
+      #   value: warn
 
     # ingress
 
