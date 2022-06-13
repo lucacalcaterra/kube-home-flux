@@ -8,3 +8,5 @@ resources:
   - vpn
   # - kasten-io
   # - system-upgrade
+
+  - flux-system
