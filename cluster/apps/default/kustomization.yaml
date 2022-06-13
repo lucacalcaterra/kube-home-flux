@@ -6,7 +6,7 @@ resources:
   - hajimari
   - mosquitto
   - openhab
-  #- resilio
+  #-  resilio
   - risco-mqtt-bridge
   - syncthing
   - tdarr
