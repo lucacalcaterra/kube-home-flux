@@ -18,12 +18,12 @@ spec:
       interval: 5m
   values:
     image:
-      tag: 3.3.0
+      tag: 3.2.0
     # openhab:
     #service:
-      #main:
-        #type: LoadBalancer
-        #loadBalancerIP: ${CONFIG_LB_IP_OPENHAB}
+    #main:
+    #type: LoadBalancer
+    #loadBalancerIP: ${CONFIG_LB_IP_OPENHAB}
     persistence:
       data:
         enabled: true
