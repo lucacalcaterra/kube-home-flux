@@ -10,5 +10,5 @@ jobs:
     steps:
       - uses: ubuntudroid/automerge-labeler@v1
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.ACT_TOKEN }}
           label: 'auto-merge' # optional
